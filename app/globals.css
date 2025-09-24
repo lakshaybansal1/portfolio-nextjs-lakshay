@@ -2,56 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #0b0b0f;
-  --fg: #eaeaea;
-  --muted: #9aa0a6;
-  --card: #111118;
-  --border: #1e1e27;
+/* Theme */
+:root{
+  --bg:#0b0b0f;
+  --fg:#eaeaea;
+  --muted:#9aa0a6;
+  --card:#111118f2;   /* slight alpha for glass */
+  --border:#1e1e27;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Base */
+html{ scroll-behavior:smooth; }
+body{
+  background:
+    radial-gradient(1000px 600px at 20% -10%, #11131c 0%, transparent 40%),
+    var(--bg);
+  color:var(--fg);
+  font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  line-height:1.6;
+}
+a{ text-underline-offset:2px; transition:color .2s ease; }
+a:hover{ color:#7aa2ff; }
+
+h1,h2,h3{ @apply tracking-tight; }
+.prose p{ @apply text-sm text-gray-300; }
+section{ @apply scroll-mt-20; }
+
+/* Sticky blurred nav */
+.sticky-nav{
+  @apply sticky top-0 z-20;
+  backdrop-filter:blur(8px);
+  background:rgba(10,10,14,.45);
+  border-bottom:1px solid color-mix(in oklab, var(--border), transparent 35%);
 }
 
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  line-height: 1.6;
+/* Section titles */
+.section-title{ @apply text-2xl font-semibold; }
+.section-subtle{ @apply text-sm text-gray-300/80; }
+
+/* Cards */
+.card{
+  @apply rounded-2xl border p-5 transition;
+  border-color:var(--border);
+  background:var(--card);
+  box-shadow:0 0 0 1px rgba(255,255,255,.02), 0 10px 30px rgba(0,0,0,.35);
+}
+.project-card .card{ transform:translateZ(0); }
+.project-card:hover .card{ transform:translateY(-1px) scale(1.01); }
+
+/* Buttons */
+.btn{
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 border;
+  border-color:var(--border);
+  transition:background .2s ease, transform .15s ease;
+}
+.btn:hover{ background:rgba(255,255,255,.06); }
+.btn:active{ transform:translateY(1px); }
+.btn-primary{
+  background:linear-gradient(90deg,#7aa2ff 0%,#74e0ff 100%);
+  color:#0b0b0f; border-color:transparent;
+}
+.btn-primary:hover{ filter:brightness(.95); }
+
+/* Tech badges */
+.badge{
+  @apply rounded-full px-2.5 py-1 text-xs;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  color:#d7d7df;
 }
 
-a {
-  text-underline-offset: 2px;
-  transition: color 0.2s ease;
+/* Fancy underline for nav links */
+.navlink{ position:relative; }
+.navlink::after{
+  content:""; position:absolute; left:0; right:0; bottom:-4px; height:1px;
+  background:linear-gradient(90deg,#7aa2ff,#74e0ff);
+  transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
 }
-a:hover {
-  color: #7aa2ff; /* subtle link hover */
-}
-
-.card {
-  @apply rounded-2xl border p-5 transition hover:scale-[1.01];
-  border-color: var(--border);
-  background: var(--card);
-}
-
-.btn {
-  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 border;
-  border-color: var(--border);
-  transition: background 0.2s ease;
-}
-.btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-h1, h2, h3 {
-  @apply tracking-tight;
-}
-
-.prose p {
-  @apply text-sm text-gray-300;
-}
-
-section {
-  @apply scroll-mt-20;
-}
+.navlink:hover::after{ transform:scaleX(1); }
+#contact p { margin: 0.25rem 0; }
