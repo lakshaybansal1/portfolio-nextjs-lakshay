@@ -42,48 +42,50 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="mt-12">
-        <h2 className="section-title">Projects</h2>
-        <p className="section-subtle mt-1">A few things I’ve built recently.</p>
+<section id="projects" className="mt-12">
+  <h2 className="section-title">Projects</h2>
+  <p className="section-subtle mt-1">A few things I’ve built recently.</p>
 
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {/* Real-world */}
-          <ProjectCard
-            title="Nimbus AI — Stock Market Analytics"
-            description="AI-assisted backtesting and fundamentals dashboard with watchlists, strategy notebooks, and Monte-Carlo PnL runs."
-            stack="Next.js • TypeScript • Supabase/Postgres • Python • Backtesting • Vercel Edge"
-            live="https://nimbus.example.com"   // TODO: replace with your real URL
-            code="https://github.com/lakshaybansal1/nimbus" // TODO: adjust if private
-          />
-          <ProjectCard
-            title="Labourie — Short-Term Labor Marketplace"
-            description="Two-sided platform matching local workers to urgent gigs. Escrowed payments, identity verification, ratings, and admin analytics."
-            stack="Next.js • Prisma • PostgreSQL • Auth.js • Stripe • Tailwind"
-            live="https://labourie.example.com" // TODO: replace with your real URL
-            code="https://github.com/lakshaybansal1/labourie"
-          />
+  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+    {/* Nimbus AI */}
+    <ProjectCard
+      title="Nimbus AI — Stock Market Analytics (Launching Soon)"
+      description="AI-assisted backtesting and fundamentals dashboard with watchlists, strategy notebooks, and Monte-Carlo PnL runs. Big project — currently in active development."
+      stack="Next.js • TypeScript • Supabase/Postgres • Python • Backtesting • Vercel Edge"
+      // no live/code links until launch
+    />
 
-          {/* Existing */}
-          <ProjectCard
-            title="Java CPU & Cache Simulator"
-            description="Cycle-accurate 32-bit RISC CPU with fetch-decode-execute pipeline, 2-pass assembler, and L1/L2 caches with cycle accounting."
-            stack="Java • JUnit • Custom ISA"
-            code="https://github.com/lakshaybansal1/java-cpu-simulator"
-          />
-          <ProjectCard
-            title="Tran Language Interpreter"
-            description="Lexer → Parser → AST → Interpreter pipeline with detailed error reporting (line/column), token lookahead, and full JUnit suite."
-            stack="Java • Recursive Descent Parsing"
-            code="https://github.com/lakshaybansal1/tran-language-spec"
-          />
-          <ProjectCard
-            title="Word-Guessing Game (C Web Server)"
-            description="Multi-threaded POSIX sockets HTTP server hosting a live word-guessing game with graceful shutdown and memory-safe cleanup."
-            stack="C • pthreads • Sockets"
-            code="https://github.com/lakshaybansal1/word-guess-game"
-          />
-        </div>
-      </section>
+    {/* Labourie */}
+    <ProjectCard
+      title="Labourie — Short-Term Labor Marketplace"
+      description="Two-sided platform matching local workers to urgent gigs. Escrowed payments, identity verification, ratings, and admin analytics."
+      stack="Next.js • Prisma • PostgreSQL • Auth.js • Stripe • Tailwind"
+      live="https://labourie.vercel.app"  // update with your real deploy URL
+      code="https://github.com/lakshaybansal1/Labourie"
+    />
+
+    {/* Existing */}
+    <ProjectCard
+      title="Java CPU & Cache Simulator"
+      description="Cycle-accurate 32-bit RISC CPU with fetch-decode-execute pipeline, 2-pass assembler, and L1/L2 caches with cycle accounting."
+      stack="Java • JUnit • Custom ISA"
+      code="https://github.com/lakshaybansal1/java-cpu-simulator"
+    />
+    <ProjectCard
+      title="Tran Language Interpreter"
+      description="Lexer → Parser → AST → Interpreter pipeline with detailed error reporting (line/column), token lookahead, and full JUnit suite."
+      stack="Java • Recursive Descent Parsing"
+      code="https://github.com/lakshaybansal1/tran-language-spec"
+    />
+    <ProjectCard
+      title="Word-Guessing Game (C Web Server)"
+      description="Multi-threaded POSIX sockets HTTP server hosting a live word-guessing game with graceful shutdown and memory-safe cleanup."
+      stack="C • pthreads • Sockets"
+      code="https://github.com/lakshaybansal1/word-guess-game"
+    />
+  </div>
+</section>
+
 
       {/* Education */}
       <section id="experience" className="mt-12">
