@@ -60,7 +60,7 @@ export default function Home() {
       title="Labourie — Short-Term Labor Marketplace"
       description="Two-sided platform matching local workers to urgent gigs. Escrowed payments, identity verification, ratings, and admin analytics."
       stack="Next.js • Prisma • PostgreSQL • Auth.js • Stripe • Tailwind"
-      live="https://labourie.vercel.app"  // update with your real deploy URL
+      live="https://labourieinusa.netlify.app/"  // update with your real deploy URL
       code="https://github.com/lakshaybansal1/Labourie"
     />
 
