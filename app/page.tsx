@@ -1,7 +1,29 @@
-// app/page.tsx
 import ProjectCard from "../components/ProjectCard";
 
 const YEAR = new Date().getFullYear();
+
+const technologies = [
+  "Python",
+  "FastAPI",
+  "React",
+  "Next.js",
+  "AWS",
+  "SQL",
+  "PostgreSQL",
+  "Docker",
+  "FME",
+  "Git",
+  "GitHub",
+  "Java",
+  "TypeScript",
+];
+
+const highlights = [
+  { value: "2+", label: "Years Programming" },
+  { value: "15+", label: "Projects Built" },
+  { value: "6+", label: "Programming Languages" },
+  { value: "4", label: "Awards & Honors" },
+];
 
 export default function Home() {
   return (
@@ -25,6 +47,9 @@ export default function Home() {
         >
           <a className="navlink" href="#experience">
             Experience
+          </a>
+          <a className="navlink" href="#skills">
+            Skills
           </a>
           <a className="navlink" href="#projects">
             Projects
@@ -52,21 +77,22 @@ export default function Home() {
       {/* Hero */}
       <section id="hero" className="mt-10">
         <p className="mb-2 text-sm font-medium uppercase tracking-wider opacity-70">
-          Software Engineering · Data Engineering · Full-Stack Development
+          Backend Engineering · Data Engineering · Artificial Intelligence
         </p>
 
         <h2 className="max-w-4xl text-3xl font-semibold sm:text-5xl">
           <span className="bg-gradient-to-r from-indigo-400 via-sky-300 to-cyan-200 bg-clip-text text-transparent">
-            Building reliable data pipelines, backend systems, and intelligent
-            software.
+            Software Engineer specializing in backend development, data
+            engineering, and intelligent systems.
           </span>
         </h2>
 
         <p className="section-subtle mt-4 max-w-3xl">
-          I am a Computer Science graduate from the University at Albany and an
-          ETL Developer at Levrx Technology. I build healthcare data workflows,
-          backend services, full-stack applications, and AI-powered systems
-          using Python, SQL, FME, AWS, FastAPI, React, and Next.js.
+          Computer Science graduate from the University at Albany, Cum Laude,
+          and ETL Developer at Levrx Technology. I build scalable backend
+          systems, healthcare data pipelines, cloud-based applications, and
+          AI-powered software using Python, SQL, FastAPI, React, Next.js, AWS,
+          and FME.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -78,10 +104,53 @@ export default function Home() {
             View Experience
           </a>
 
+          <a
+            className="btn"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Resume
+          </a>
+
+          <a
+            className="btn"
+            href="https://github.com/lakshaybansal1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            className="btn"
+            href="https://www.linkedin.com/in/lakshay-bansal-274564220"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
           <a className="btn" href="mailto:lakshaybansal655@gmail.com">
             Email Me
           </a>
         </div>
+      </section>
+
+      {/* Highlights */}
+      <section
+        className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Career highlights"
+      >
+        {highlights.map((item) => (
+          <div
+            key={item.label}
+            className="rounded-2xl border border-[var(--border)] p-5 text-center"
+          >
+            <p className="text-3xl font-bold">{item.value}</p>
+            <p className="section-subtle mt-1 text-sm">{item.label}</p>
+          </div>
+        ))}
       </section>
 
       {/* Experience */}
@@ -101,15 +170,15 @@ export default function Home() {
                 <strong>Full-Time:</strong> Jun 2026 – Present
               </p>
               <p>
-                <strong>Internship:</strong> Apr 2026 – May 2026
+                <strong>Part-Time:</strong> Apr 2026 – May 2026
               </p>
             </div>
           </div>
 
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
             <li>
-              Design and maintain ETL workflows supporting healthcare and
-              pharmacy benefit management data.
+              Design and maintain production ETL workflows supporting
+              healthcare and pharmacy benefit management data.
             </li>
             <li>
               Build data-ingestion and transformation pipelines using SQL,
@@ -117,15 +186,16 @@ export default function Home() {
             </li>
             <li>
               Develop reusable FME transformers, preprocessors, loaders, and
-              automated client-processing workflows.
+              automated client-processing workflows that reduce manual work.
             </li>
             <li>
-              Validate healthcare datasets, troubleshoot production jobs, and
-              improve processing reliability.
+              Troubleshoot production ETL failures, validate healthcare
+              datasets, and improve data quality and processing reliability.
             </li>
             <li>
               Collaborate with software engineers and analysts to deliver
-              client integrations and backend automation.
+              client integrations, backend automation, and scalable data
+              solutions.
             </li>
           </ul>
         </div>
@@ -139,7 +209,7 @@ export default function Home() {
           <div className="rounded-2xl border border-[var(--border)] p-4">
             <h3 className="font-semibold">Languages</h3>
             <p className="section-subtle mt-2 text-sm">
-              Python, Java, JavaScript, TypeScript, SQL, C, C++, HTML, CSS
+              Python, Java, TypeScript, JavaScript, SQL, C, C++
             </p>
           </div>
 
@@ -153,14 +223,15 @@ export default function Home() {
           <div className="rounded-2xl border border-[var(--border)] p-4">
             <h3 className="font-semibold">Backend</h3>
             <p className="section-subtle mt-2 text-sm">
-              FastAPI, Flask, Node.js, REST APIs
+              FastAPI, Flask, Node.js, REST APIs, Authentication
             </p>
           </div>
 
           <div className="rounded-2xl border border-[var(--border)] p-4">
             <h3 className="font-semibold">Data Engineering</h3>
             <p className="section-subtle mt-2 text-sm">
-              ETL, FME, Data Pipelines, Data Transformation, Data Validation
+              ETL, FME, Data Pipelines, Data Transformation, Data Validation,
+              Secure File Transfer
             </p>
           </div>
 
@@ -172,10 +243,28 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl border border-[var(--border)] p-4">
-            <h3 className="font-semibold">Cloud &amp; Tools</h3>
+            <h3 className="font-semibold">Cloud &amp; DevOps</h3>
             <p className="section-subtle mt-2 text-sm">
-              AWS S3, Docker, Kubernetes, Git, GitHub, Vercel, Postman, JUnit
+              AWS, AWS S3, Docker, Kubernetes, Git, GitHub, Vercel, CI/CD,
+              Postman
             </p>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <h3 className="text-sm font-semibold uppercase tracking-wider opacity-70">
+            Featured Technologies
+          </h3>
+
+          <div className="mt-3 flex flex-wrap gap-2">
+            {technologies.map((technology) => (
+              <span
+                key={technology}
+                className="rounded-full border border-[var(--border)] px-3 py-1 text-sm"
+              >
+                {technology}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -192,14 +281,14 @@ export default function Home() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <ProjectCard
             title="AI Photo Forensic Detector"
-            description="AI-powered forensic platform that analyzes metadata and image characteristics to identify potentially manipulated images and generate authenticity verdicts."
+            description="AI-powered digital image forensic platform that analyzes metadata, camera characteristics, and deep-learning predictions to identify potentially manipulated images and generate authenticity reports."
             stack="Python • FastAPI • PyTorch • Next.js • React Native"
             code="https://github.com/FBQuark/photo-forensic-detector"
           />
 
           <ProjectCard
             title="Labourie — Labor Marketplace"
-            description="Full-stack labor marketplace with secure authentication, job management, escrow-based payments, automated payouts, and platform analytics."
+            description="Full-stack labor marketplace connecting workers with customers through secure authentication, job management, Stripe payments, automated payouts, and platform analytics."
             stack="Next.js • PostgreSQL • Auth.js • Stripe • Tailwind CSS"
             live="https://labourieinusa.netlify.app/"
             code="https://github.com/lakshaybansal1/Labourie"
@@ -207,7 +296,7 @@ export default function Home() {
 
           <ProjectCard
             title="Package Assignment and Routing System"
-            description="Vehicle-routing optimization system using real-world road-network data and multiple heuristic algorithms to minimize delivery costs."
+            description="Vehicle-routing optimization platform implementing Genetic Algorithms, Ant Colony Optimization, and Simulated Annealing on real-world road-network data."
             stack="Python • Genetic Algorithm • Ant Colony Optimization • Simulated Annealing"
           />
 
@@ -220,13 +309,13 @@ export default function Home() {
 
           <ProjectCard
             title="Nimbus AI — Stock Analytics Platform"
-            description="AI-powered investment analytics platform supporting quantitative market analysis, strategy evaluation, portfolio insights, and financial data visualization."
+            description="AI-powered stock market analytics platform providing investment insights, financial visualizations, strategy evaluation, and portfolio analysis."
             stack="Next.js • Python • Supabase • PostgreSQL • Vercel"
           />
 
           <ProjectCard
             title="Java CPU & Cache Simulator"
-            description="Cycle-accurate 32-bit processor simulator with a custom instruction set, two-pass assembler, and multi-level cache hierarchy."
+            description="Cycle-accurate processor simulator featuring a custom instruction set architecture, two-pass assembler, memory hierarchy, and multi-level cache simulation."
             stack="Java • Computer Architecture • JUnit • Custom ISA"
             code="https://github.com/lakshaybansal1/java-cpu-simulator"
           />
@@ -304,15 +393,21 @@ export default function Home() {
         <h2 className="section-title">About</h2>
 
         <p className="section-subtle mt-3 max-w-3xl">
-          I am a software engineer and ETL developer with experience building
-          healthcare data workflows, backend systems, full-stack applications,
-          and AI-powered software. I enjoy solving problems involving data
-          transformation, system reliability, API development, automation, and
-          algorithm design.
+          I am a software engineer passionate about building scalable backend
+          systems, cloud-based applications, intelligent automation, and
+          data-driven solutions. My experience spans healthcare ETL systems,
+          AI-powered applications, algorithmic software, and full-stack
+          development.
+        </p>
+
+        <p className="section-subtle mt-3 max-w-3xl">
+          I enjoy solving challenging engineering problems involving
+          large-scale data processing, backend architecture, cloud computing,
+          API development, automation, and machine learning.
         </p>
 
         <p className="mt-3 text-sm opacity-80">
-          Areas of Interest: Backend Engineering, Data Engineering, Distributed
+          Interested In: Backend Engineering, Data Engineering, Distributed
           Systems, Cloud Computing, Artificial Intelligence, and Full-Stack
           Development
         </p>
@@ -322,7 +417,12 @@ export default function Home() {
       <section id="contact" className="mt-14">
         <h2 className="section-title">Contact</h2>
 
-        <div className="section-subtle mt-3 space-y-2">
+        <p className="section-subtle mt-3 max-w-3xl">
+          Open to Software Engineering, Backend Engineering, Data Engineering,
+          and Full-Stack Development opportunities.
+        </p>
+
+        <div className="section-subtle mt-4 space-y-2">
           <p>
             Email:{" "}
             <a
@@ -364,12 +464,25 @@ export default function Home() {
             </a>
           </p>
 
+          <p>
+            Resume:{" "}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="underline"
+              rel="noopener noreferrer"
+            >
+              View portfolio resume
+            </a>
+          </p>
+
           <p>Location: Albany, New York</p>
         </div>
       </section>
 
       <footer className="mt-14 border-t border-[var(--border)] pt-4 text-xs opacity-70">
-        © {YEAR} Lakshay Bansal
+        <p>Designed and built by Lakshay Bansal</p>
+        <p className="mt-1">© {YEAR} Lakshay Bansal. All rights reserved.</p>
       </footer>
     </main>
   );
